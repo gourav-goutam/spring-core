@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans	http://www.springframework.org/schema/beans/spring-beans.xsd
+ 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+ 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+ 		">
+
+
+<!-- standalone list -->
+    <util:list list-class="java.util.ArrayList" id="list">
+        <value>1234</value>
+        <value>2345</value>
+        <value>3456</value>
+    </util:list>
+
+    <!-- standalone map -->
+    <util:map map-class="java.util.HashMap" id="map">
+        <entry key="spring" value="2000"/>
+        <entry key="orm" value="3000"/>
+        <entry key="java" value="4000"/>
+    </util:map>
+
+    <!-- standalone map -->
+    <util:properties id="props">
+        <prop key="name">Sagar</prop>
+        <prop key="age">27</prop>
+    </util:properties>
+	
+<bean id = "person" class = "com.springcore.standaloneCollections.Person">
+      
+      <!-- pass references to standalone collections -->
+      <property name = "list" ref="list"/>
+    <property name = "map" ref="map"/>
+    <property name = "prop" ref="props"/>
+   </bean>
+
+</beans>
